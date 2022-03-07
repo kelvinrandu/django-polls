@@ -1,1 +1,2 @@
-web: gunicorn django-polls.wsgi --log-file -
+web: uwsgi --ini uwsgi.ini --enable-threads
+release: python manage.py migrate
