@@ -1,0 +1,44 @@
+{% extends "forms/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="name">name: </label>
+  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="offered_in">email: </label>
+  <input class="form-control col-sm-10" id="offered_in" type="text" name="offered_in" value="{{ object.offered_in }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="level">address: </label>
+  <input class="form-control col-sm-10" id="level" type="text" name="level" value="{{ object.level }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="defaultCheck1">
+        Computer literate
+      </label>
+  <input class="form-control col-sm-10" type="checkbox" value="" id="defaultCheck1">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="description">income: </label>
+  <input class="form-control col-sm-10" id="description" type="text" name="description" value="{{ object.description }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="contact">Years of experience: </label>
+  <input class="form-control col-sm-10" id="contact" type="text" name="contact" value="{{ object.contact }}">
+  </div>
+
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}
+
+
+
+
+
+

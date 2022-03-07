@@ -9,8 +9,9 @@ from .models import Form
 
 
 class CreatePersona(generic.FormView):
+    model = Form
     form_class = FormForm
-    template_name = 'forms/index.html'
+    template_name = 'forms/create.html'
 
 # # Create your views here.
 def index(request):
