@@ -16,6 +16,11 @@ class FormForm(forms.ModelForm):
             "years_of_experience",
 
         ]
+        required_fields = (
+        'name',
+        'email',
+ 
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
