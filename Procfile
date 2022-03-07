@@ -1,1 +1,1 @@
-web: gunicorn ladder-polls.wsgi --log-file -
+web: gunicorn run:app
