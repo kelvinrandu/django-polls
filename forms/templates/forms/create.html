@@ -4,33 +4,8 @@
 
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.errors}}
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="name">name: </label>
-  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
-  </div>
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="offered_in">email: </label>
-  <input class="form-control col-sm-10" id="offered_in" type="text" name="offered_in" value="{{ object.email}}">
-  </div>
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="level">address: </label>
-  <input class="form-control col-sm-10" id="address" type="text" name="address" value="{{ object.address }}">
-  </div>
-  <div class="form-group row">
-      <label class="col-sm-2 col-form-label" for="defaultCheck1">
-        Computer literate
-      </label>
-  <input class="form-control col-sm-10" type="checkbox" value="" id="computer_literate">
-  </div>
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="description">income: </label>
-  <input class="form-control col-sm-10" id="income" type="text" name="description" value="{{ object.income }}">
-  </div>
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="years_of_experience">Years of experience: </label>
-  <input class="form-control col-sm-10" id="years_of_experience" type="number" name="contact" value="{{ object.years_of_experience }}">
-  </div>
+  {{form}}
+
 
   <input type="submit" value="Save" class="btn btn-primary">
 </form>
