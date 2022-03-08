@@ -1,23 +1,20 @@
-{% extends "forms/base.html" %}
-{% load crispy_forms_tags %}
-{% block content %}
+{% extends "forms/base.html" %} {% load crispy_forms_tags %} {% block content %}
 
-
-
-
-        <a class="btn btn-light" href="{% url 'create' %}">
-    Scholarship Listing
-    </a>
+<a class="btn btn-light" href="{% url 'create' %}"> Create Persona </a>
 
 {% if response_list %}
 <ul>
-    {% for response in response_list %}
-    <li>{{ response.name }}</li>
-    {% endfor %}
+  {% for response in response_list %}
+
+  <li>
+    <button type="button" class="btn btn-primary">
+      {{ response.name }}
+      <span class="badge bg-secondary">{{ response.years_of_experience }}</span>
+    </button>
+  </li>
+  {% endfor %}
 </ul>
+
 {% else %}
 <p>No data are available.</p>
-{% endif %}
-
-
-{% endblock %}
+{% endif %} {% endblock %}

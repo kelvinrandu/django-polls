@@ -9,4 +9,4 @@ class Form(models.Model):
     address=models.CharField(max_length=150, blank=False)
     computer_literate=models.BooleanField(('active'), default=True)
     income=models.CharField(max_length=150, blank=False)
-    years_of_experience = models.PositiveSmallIntegerField(blank=True, null=True)
+    years_of_experience=models.PositiveSmallIntegerField(blank=True, null=True)
