@@ -18,6 +18,8 @@ class CreatePersona(generic.FormView):
     # context = {
     #     'form': form_class,
     # }
+
+# create persona view
 def create(request):
     form = FormForm()
     if request.method == 'POST':
@@ -29,6 +31,23 @@ def create(request):
     context = {
         'form': form,
     }
+    return HttpResponse(template.render(context, request))
+
+# create persona view
+def update(request,pk):
+   
+    response = Form.objects.get(id=pk)
+    form = FormForm(instance=response)
+    if request.method == 'POST':
+        form = FormForm(request.POST,instance=response)
+        if form.is_valid():
+            form.save()
+            return redirect('/forms')
+    template = loader.get_template('forms/create.html')
+    context = {
+        'form': form,
+    }
+    
     return HttpResponse(template.render(context, request))
 
 # # Create your views here.
